@@ -1,0 +1,9 @@
+﻿@page
+@model WebApp.Pages.Average.AppModel
+@{
+}
+
+<h1>App</h1>
+<app>
+    @(await Html.RenderComponentAsync<WebApp.Components.Counter>(RenderMode.Server))
+</app>

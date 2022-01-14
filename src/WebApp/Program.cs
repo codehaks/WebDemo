@@ -1,8 +1,13 @@
+using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
+using WebApp.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddServerSideBlazor();
+builder.Services.AddSignalR();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,5 +26,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
+app.MapHub<CounterHub>("/counterhub");
+app.MapBlazorHub();
 app.Run();
