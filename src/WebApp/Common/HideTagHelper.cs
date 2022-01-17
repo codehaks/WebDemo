@@ -6,7 +6,7 @@ namespace WebApp.Common
     public class HideTagHelper:TagHelper
     {
         [HtmlAttributeName("hide")]
-        public bool IsHidden { get; set; }=false;
+        public bool IsHidden { get; set; }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
